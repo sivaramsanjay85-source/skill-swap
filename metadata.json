@@ -1,0 +1,6 @@
+{
+  "name": "SkillSwap",
+  "description": "A modern peer-to-peer student skill exchange platform where college students trade skills, schedule collaborative learning sessions, and earn badges.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
