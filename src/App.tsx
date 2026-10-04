@@ -10,6 +10,9 @@ import { LeaderboardPage } from './components/LeaderboardPage';
 import { StudentProfilePage } from './components/StudentProfilePage';
 import { AnalyticsPage } from './components/AnalyticsPage';
 import { ChatPage } from './components/ChatPage';
+import { RoadmapsPage } from './components/RoadmapsPage';
+import { StudyCirclesPage } from './components/StudyCirclesPage';
+import { SkillGapPage } from './components/SkillGapPage';
 import { AuthModal } from './components/AuthModal';
 import { RequestSwapModal } from './components/RequestSwapModal';
 import { ReviewModal } from './components/ReviewModal';
@@ -417,6 +420,37 @@ export default function App() {
             currentUser={currentUser || profileTargetUser}
             onNavigate={handleNavigate}
             onSelectUserForProfile={handleViewUserProfile}
+          />
+        )}
+
+        {activePage === 'roadmaps' && (
+          <RoadmapsPage
+            currentUser={currentUser || profileTargetUser}
+            onNavigate={handleNavigate}
+            onProposeSwap={(skill1, skill2) => {
+              if (leaderboard.length > 1) {
+                const partner = leaderboard.find(u => u._id !== currentUser?._id) || leaderboard[1];
+                handleOpenSwapModal(partner, skill1, skill2);
+              }
+            }}
+          />
+        )}
+
+        {activePage === 'circles' && (
+          <StudyCirclesPage
+            currentUser={currentUser || profileTargetUser}
+            onNavigate={handleNavigate}
+          />
+        )}
+
+        {activePage === 'skill-gap' && (
+          <SkillGapPage
+            currentUser={currentUser || profileTargetUser}
+            skills={skills}
+            onNavigate={handleNavigate}
+            onProposeSwap={(targetStudent, offerSkill, wantSkill) =>
+              handleOpenSwapModal(targetStudent, offerSkill, wantSkill)
+            }
           />
         )}
 

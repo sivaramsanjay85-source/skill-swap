@@ -178,6 +178,90 @@ export interface ChatConversation {
   messages: ChatMessage[];
 }
 
+export interface RoadmapWeek {
+  week: number;
+  title: string;
+  skill1Focus: string;
+  skill2Focus: string;
+  objectives: string[];
+  deliverables: string[];
+  completed?: boolean;
+}
+
+export interface StudyRoadmap {
+  id: string;
+  title: string;
+  category: string;
+  skill1: string;
+  skill2: string;
+  durationWeeks: number;
+  level: ExperienceLevel;
+  description: string;
+  popularPartnerCampuses: string[];
+  weeks: RoadmapWeek[];
+  curatedBy: string;
+  isCustom?: boolean;
+}
+
+export interface CircleDiscussionPost {
+  id: string;
+  authorId: string;
+  authorName: string;
+  authorAvatar: string;
+  authorCollege: string;
+  timestamp: string;
+  content: string;
+  likes: number;
+  repliesCount: number;
+  tag?: string;
+}
+
+export interface StudyCircle {
+  id: string;
+  title: string;
+  campus: string;
+  subject: string;
+  description: string;
+  schedule: string;
+  nextSessionDate: string;
+  nextSessionTime: string;
+  meetingLink: string;
+  meetingLocation: string;
+  hostName: string;
+  hostAvatar: string;
+  hostRole: string;
+  membersCount: number;
+  isJoined?: boolean;
+  tags: string[];
+  discussion: CircleDiscussionPost[];
+}
+
+export interface CareerRoleBenchmark {
+  id: string;
+  roleName: string;
+  icon: string;
+  category: string;
+  averageSalary: string;
+  description: string;
+  requiredSkills: {
+    name: string;
+    importance: 'critical' | 'recommended' | 'optional';
+    category: SkillCategory;
+  }[];
+}
+
+export interface CampusCertificate {
+  certificateId: string;
+  issueDate: string;
+  studentName: string;
+  partnerName: string;
+  studentCollege: string;
+  skillTaught: string;
+  skillLearned: string;
+  hoursCompleted: number;
+  verificationHash: string;
+}
+
 export type ActivePage =
   | 'home'
   | 'explore'
@@ -187,6 +271,9 @@ export type ActivePage =
   | 'chat'
   | 'analytics'
   | 'leaderboard'
+  | 'roadmaps'
+  | 'circles'
+  | 'skill-gap'
   | 'profile'
   | 'notifications'
   | 'how-it-works'

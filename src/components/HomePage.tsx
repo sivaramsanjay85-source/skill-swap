@@ -17,7 +17,8 @@ import {
   Code,
   Palette,
   Video,
-  Languages
+  Languages,
+  Target
 } from 'lucide-react';
 import { ActivePage, SkillItem, User } from '../types';
 import { StudentExchangeIllustration } from './StudentExchangeIllustration';
@@ -332,6 +333,91 @@ export const HomePage: React.FC<HomePageProps> = ({
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* ADVANCED CO-LEARNING ECOSYSTEM */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="rounded-3xl bg-linear-to-b from-slate-900 via-indigo-950 to-slate-900 border border-slate-800 text-white p-8 sm:p-12 shadow-xl space-y-8">
+          <div className="max-w-3xl space-y-3">
+            <span className="text-xs font-extrabold uppercase tracking-widest text-teal-400">
+              Advanced Campus Learning Tools
+            </span>
+            <h3 className="text-2xl sm:text-3xl font-extrabold font-heading">
+              Next-Generation Peer Learning Ecosystem
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              SkillSwap equips students with structured frameworks to make peer learning as rigorous and credible as traditional coursework.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Feature 1: Roadmaps */}
+            <div
+              onClick={() => onNavigate('roadmaps')}
+              className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-indigo-400/50 hover:bg-white/10 transition cursor-pointer flex flex-col justify-between space-y-4 group"
+            >
+              <div className="space-y-3">
+                <div className="w-10 h-10 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center">
+                  <BookOpen className="w-5 h-5" />
+                </div>
+                <h4 className="text-base font-bold text-white group-hover:text-indigo-300 transition">
+                  Structured Study Syllabi
+                </h4>
+                <p className="text-xs text-slate-300 leading-relaxed">
+                  Follow proven 3-to-4 week bilateral exchange curricula with defined weekly objectives, practice deliverables, and exportable Markdown syllabi.
+                </p>
+              </div>
+              <span className="text-xs font-bold text-indigo-400 flex items-center gap-1 group-hover:translate-x-1 transition">
+                <span>Explore Roadmaps</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </span>
+            </div>
+
+            {/* Feature 2: Circles */}
+            <div
+              onClick={() => onNavigate('circles')}
+              className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-teal-400/50 hover:bg-white/10 transition cursor-pointer flex flex-col justify-between space-y-4 group"
+            >
+              <div className="space-y-3">
+                <div className="w-10 h-10 rounded-xl bg-teal-500/20 text-teal-400 flex items-center justify-center">
+                  <Users className="w-5 h-5" />
+                </div>
+                <h4 className="text-base font-bold text-white group-hover:text-teal-300 transition">
+                  Campus Study Circles & Labs
+                </h4>
+                <p className="text-xs text-slate-300 leading-relaxed">
+                  Join recurring campus working groups, algorithm sprints, design portfolio roasts, and language coffee tables across 5+ universities.
+                </p>
+              </div>
+              <span className="text-xs font-bold text-teal-400 flex items-center gap-1 group-hover:translate-x-1 transition">
+                <span>Join Campus Labs</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </span>
+            </div>
+
+            {/* Feature 3: Career Gap */}
+            <div
+              onClick={() => onNavigate('skill-gap')}
+              className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-purple-400/50 hover:bg-white/10 transition cursor-pointer flex flex-col justify-between space-y-4 group"
+            >
+              <div className="space-y-3">
+                <div className="w-10 h-10 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center">
+                  <Target className="w-5 h-5" />
+                </div>
+                <h4 className="text-base font-bold text-white group-hover:text-purple-300 transition">
+                  Career Skill Gap Analyzer
+                </h4>
+                <p className="text-xs text-slate-300 leading-relaxed">
+                  Benchmark your current profile against industry roles (Full-Stack, AI/ML, Design) and discover verified peers who teach your exact gap skills.
+                </p>
+              </div>
+              <span className="text-xs font-bold text-purple-400 flex items-center gap-1 group-hover:translate-x-1 transition">
+                <span>Analyze Career Gaps</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </span>
+            </div>
+          </div>
         </div>
       </section>
 

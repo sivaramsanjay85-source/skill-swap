@@ -16,7 +16,10 @@ import {
   Layers,
   ChevronDown,
   MessageSquare,
-  BarChart3
+  BarChart3,
+  BookOpen,
+  Users,
+  Target
 } from 'lucide-react';
 import { ActivePage, User, NotificationItem } from '../types';
 import { INITIAL_USERS } from '../data/seedData';
@@ -99,9 +102,11 @@ export const Navbar: React.FC<NavbarProps> = ({
   }, []);
 
   const navItems: { id: ActivePage; label: string; icon: React.ReactNode; badge?: number; isSpecial?: boolean }[] = [
-    { id: 'home', label: 'Home', icon: <Compass className="w-4 h-4" /> },
-    { id: 'explore', label: 'Explore Skills', icon: <Search className="w-4 h-4" /> },
+    { id: 'explore', label: 'Explore', icon: <Search className="w-4 h-4" /> },
     { id: 'matching', label: 'Smart Match', icon: <Sparkles className="w-4 h-4" />, isSpecial: true },
+    { id: 'roadmaps', label: 'Roadmaps', icon: <BookOpen className="w-4 h-4" /> },
+    { id: 'circles', label: 'Circles', icon: <Users className="w-4 h-4" /> },
+    { id: 'skill-gap', label: 'Skill Gap', icon: <Target className="w-4 h-4" /> },
     { id: 'requests', label: 'Requests', icon: <ArrowLeftRight className="w-4 h-4" />, badge: effectiveRequestsCount },
     { id: 'sessions', label: 'Sessions', icon: <Calendar className="w-4 h-4" />, badge: activeSessionsCount },
     { id: 'chat', label: 'Messages', icon: <MessageSquare className="w-4 h-4" /> },

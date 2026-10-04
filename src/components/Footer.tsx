@@ -55,6 +55,21 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 </button>
               </li>
               <li>
+                <button onClick={() => onNavigate('roadmaps')} className="hover:text-indigo-600 dark:hover:text-indigo-400 transition">
+                  Study Syllabi & Roadmaps
+                </button>
+              </li>
+              <li>
+                <button onClick={() => onNavigate('circles')} className="hover:text-indigo-600 dark:hover:text-indigo-400 transition">
+                  Campus Study Circles & Labs
+                </button>
+              </li>
+              <li>
+                <button onClick={() => onNavigate('skill-gap')} className="hover:text-indigo-600 dark:hover:text-indigo-400 transition">
+                  Career Skill Gap Analyzer
+                </button>
+              </li>
+              <li>
                 <button onClick={() => onNavigate('chat')} className="hover:text-indigo-600 dark:hover:text-indigo-400 transition">
                   Agreed Swap Messages
                 </button>
